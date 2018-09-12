@@ -1,25 +1,3 @@
-var countDownDate = new Date("aug 27, 2018 15:37:25").getTime();
-var x = setInterval(function() {
-    var now = new Date().getTime();
-    var distance = countDownDate - now;
-    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-    if(days > 0){
-        var html = "ENDS in " + days + "d " + hours + "h "
-        + minutes + "m "
-        $('.text_wrapper p').html(html)
-    }else{
-        document.getElementById("demo").innerHTML ="ENDS in " + hours + "h "
-        + minutes + "m " + seconds + "s"
-    }
-
-    if (distance < 0) {
-        clearInterval(x);
-        document.getElementById("demo").innerHTML = "EXPIRED";
-    }
-}, 1000);
 $('.upcomingWrapper').slick({
     dots: false,
     infinite: true,
@@ -63,4 +41,69 @@ $(function() {
     event.preventDefault();
     $(this).next('.nav-links').slideToggle(500);
   });
+
+  $('.faqtab__content__block').addClass('tab__collapse');
+  $('.faqtab__content__block').first().removeClass('tab__collapse').addClass('show');
+
+  $('.faqtab__li').first().addClass('active');
+
+  $('.faqtab__link').click(function(event) {
+    event.preventDefault();
+    $('.faqtab__li').removeClass('active');
+    $(this).parent().addClass('active');
+
+    var target = $(this).attr('href');
+    $('.faqtab__content__block').fadeOut(0, function() {
+
+      $('.faqtab__content__block.show .faqaccordion .faqaccordion__block').first().children('.faqaccordion__header').removeClass('active-collapse');
+      $('.faqtab__content__block.show .faqaccordion .faqaccordion__block').first().children('.faqaccordion__content').slideUp(500);
+
+    }).removeClass('show').addClass('tab__collapse');
+    $(target).fadeIn(600, function() {
+
+      $(this).removeClass('tab__collapse').addClass('show');
+      $('.faqtab__content__block.show .faqaccordion .faqaccordion__block').first().children('.faqaccordion__header').addClass('active-collapse');
+      $('.faqtab__content__block.show .faqaccordion .faqaccordion__block').first().children('.faqaccordion__content').slideDown(500);
+      $('.faqtab__content__block.show .faqaccordion .faqaccordion__block').first().children('.faqaccordion__header').children('i').removeClass('mdi-plus').addClass('mdi-minus');
+
+    });
+  });
+
+  $('.faqtab__content__block .faqaccordion .faqaccordion__block').first().children('.faqaccordion__header').addClass('active-collapse');
+  $('.faqtab__content__block .faqaccordion .faqaccordion__block').first().children('.faqaccordion__content').slideDown(500);
+  $('.faqtab__content__block .faqaccordion .faqaccordion__block').first().children('.faqaccordion__header').children('i').removeClass('mdi-plus').addClass('mdi-minus');
+
+  $('.faqaccordion__header').click(function(event) {
+    if ($(this).hasClass('active-collapse')) {
+      $(this).removeClass('active-collapse');
+    } else {
+      $('.faqaccordion__block .faqaccordion__header').removeClass('active-collapse');
+      $(this).addClass('active-collapse');
+    }
+
+    $('.faqaccordion__content').stop().slideUp(500);
+    $(this).next('.faqaccordion__content').stop().slideToggle(500);
+
+
+    if ($('.faqaccordion__header').hasClass('active-collapse')) {
+      $('.faqaccordion__header').children('i').removeClass('mdi-minus').addClass('mdi-plus');
+      $(this).children('i').removeClass('mdi-plus').addClass('mdi-minus');
+    } else {
+      $(this).children('i').removeClass('mdi-minus').addClass('mdi-plus');
+    }
+  });
+
+  if ($(window).width() < 767) {
+
+      $('.faqtab__ul').owlCarousel({
+        margin:10,
+        loop:true,
+        autoWidth:true,
+        items:4,
+        nav: false,
+        dots: false
+      });
+    } else {
+      $('.faqtab__ul').trigger('refresh.owl.carousel');
+    }
 });

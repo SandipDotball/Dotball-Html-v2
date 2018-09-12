@@ -1,44 +1,4 @@
 @font-face {
-    font-family: '700';
-    src: url('../fonts/UbuntuBold.eot');
-    src: url('../fonts/UbuntuBold.eot') format('embedded-opentype'),
-         url('../fonts/UbuntuBold.woff2') format('woff2'),
-         url('../fonts/UbuntuBold.woff') format('woff'),
-         url('../fonts/UbuntuBold.ttf') format('truetype'),
-         url('../fonts/UbuntuBold.svg#UbuntuBold') format('svg');
-}
-
-@font-face {
-    font-family: '500';
-    src: url('../fonts/UbuntuMedium.eot');
-    src: url('../fonts/UbuntuMedium.eot') format('embedded-opentype'),
-         url('../fonts/UbuntuMedium.woff2') format('woff2'),
-         url('../fonts/UbuntuMedium.woff') format('woff'),
-         url('../fonts/UbuntuMedium.ttf') format('truetype'),
-         url('../fonts/UbuntuMedium.svg#UbuntuMedium') format('svg');
-}
-
-@font-face {
-    font-family: '400';
-    src: url('../fonts/UbuntuRegular.eot');
-    src: url('../fonts/UbuntuRegular.eot') format('embedded-opentype'),
-         url('../fonts/UbuntuRegular.woff2') format('woff2'),
-         url('../fonts/UbuntuRegular.woff') format('woff'),
-         url('../fonts/UbuntuRegular.ttf') format('truetype'),
-         url('../fonts/UbuntuRegular.svg#UbuntuRegular') format('svg');
-}
-
-@font-face {
-    font-family: '300';
-    src: url('../fonts/Ubuntu-Light.eot');
-    src: url('../fonts/Ubuntu-Light.eot') format('embedded-opentype'),
-         url('../fonts/Ubuntu-Light.woff2') format('woff2'),
-         url('../fonts/Ubuntu-Light.woff') format('woff'),
-         url('../fonts/Ubuntu-Light.ttf') format('truetype'),
-         url('../fonts/Ubuntu-Light.svg#Ubuntu-Light') format('svg');
-}
-
-@font-face {
     font-family: 'latoblack';
     src: url('../fonts/lato-black-webfont.eot');
     src: url('../fonts/lato-black-webfont.eot?#iefix') format('embedded-opentype'),
@@ -47,7 +7,6 @@
          url('../fonts/lato-black-webfont.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
-
 }
 
 @font-face {
@@ -59,7 +18,6 @@
          url('../fonts/lato-bold-webfont.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
-
 }
 
 @font-face {
@@ -71,7 +29,6 @@
          url('../fonts/lato-light-webfont.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
-
 }
 
 @font-face {
@@ -83,7 +40,6 @@
          url('../fonts/lato-regular-webfont.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
-
 }
 
 * {
@@ -522,7 +478,7 @@ ul.recent{
 }
 .howtoplaywrapper label{
     color: #000000;	
-    font-family: "500";	
+    font-family: 'latobold', sans-serif;
     font-size: 16px;
     line-height: 22px;	
     text-align: center;
@@ -532,7 +488,7 @@ ul.recent{
 }
 .howtoplaywrapper p{
     color: #9195A4;	
-    font-family: "300";	
+    font-family: 'latoregular', sans-serif;
     font-size: 14px;	
     line-height: 25px;	
     text-align: center;
@@ -564,14 +520,14 @@ ul.recent{
 }
 .mobile-app-wrapper .textHolder label{
     color: #FFFFFF;	
-    font-family: "700";	
+    font-family: 'latoblack', sans-serif;	
     font-size: 26px;	
     letter-spacing: 0.01px;	
     line-height: 30px;
 }
 .mobile-app-wrapper .textHolder p{
     color: #FFFFFF;	
-    font-family: "300";	
+    font-family: 'latoregular', sans-serif;
     font-size: 14px;	
     line-height: 27px;
 }
@@ -1270,5 +1226,314 @@ ul.recent{
 @media all and (max-width: 360px) {
   .logo_wrapper img {
     max-width: 150px;
+  }
+}
+
+
+/*========================
+INNER PAGE STYLES
+========================*/
+.page-container {
+  padding-top: 50px;
+}
+.page-content {
+  line-height: 1.5;
+  font-size: 15px;
+}
+.page-content p,
+.page-content ul,
+.page-content ol {
+  margin-bottom: 1.5em;
+}
+.page-content ul,
+.page-content ol {
+  padding-left: 1.5em;
+}
+.page-content li {
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+.page-content h2,
+.page-content h3,
+.page-content h4,
+.page-content h5,
+.page-content h6 {
+  margin-bottom: 1.5em;
+}
+
+.page-header {
+  padding-bottom: 50px;
+  text-align: center;
+}
+.page-header h1 {
+  font-family: 'latoblack', sans-serif;
+  font-size: 52px;
+  line-height: 1;
+  color: #038cff;
+}
+@media all and (max-width: 991px) {
+  .page-header h1 {
+    font-size: 42px;
+  }
+}
+.page-header h1 span {
+  color: #FF0653;
+}
+.privacy-page-container li,
+.terms-page-container li {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+.privacy-page-container,
+.terms-page-container {
+  counter-reset: h3headign;
+}
+.privacy-page-container h3:before,
+.terms-page-container h3:before {
+    counter-increment: h3headign;
+    content: counter(h3headign);
+    display: inline-block;
+    vertical-align: middle;
+    background-color:#FF0653;
+    color: #fff;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -o-border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+    font-size: 18px;
+    margin-right: 15px;
+}
+.privacy-page-container h3,
+.terms-page-container h3 {
+  color: #038cff;
+   font-family: 'latoblack', sans-serif;
+   font-weight: normal;
+}
+@media all and (max-width: 767px) {
+  .page-container {
+    padding-top: 30px;
+  }
+  .page-header {
+    padding-bottom: 30px;
+  }
+}
+@media all and (max-width: 640px) {
+  .page-header h1 {
+    font-size: 8vw;
+  }
+}
+
+
+/*============================
+FAQ STYLES
+=============================*/
+.tab__collapse {
+  display: none;
+}
+.faqtab__row {
+  display: flex;
+}
+.faqtab__col1 {
+  flex: 3;
+}
+.faqtab__col2 {
+  flex: 9;
+  background-color: #fff;
+  border:solid 1px #efefef;
+  margin-left: 23px;
+}
+.faqtab__content {
+  padding: 20px 50px;
+}
+.page-content .faqtab__ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.page-content .faqtab__li {
+  padding: 0;
+}
+.faqtab__li + .faqtab__li {
+  margin-top: 24px;
+}
+.faqtab__li a {
+  display: block;
+  padding: 12px 15px;
+  background-color: #fff;
+  border: 1px solid rgba(151, 151, 151, 0.24);
+  font-family: 'latoregular', sans-serif;
+  font-size: 14px;
+  text-decoration: none;
+  text-align: right;
+  -webkit-transition: all 0.35s ease;
+  -o-transition: all 0.35s ease;
+  transition: all 0.35s ease;
+  position: relative;
+}
+.faqtab__link__icon {
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 50%;
+  text-align: center;
+  display: inline-block;
+  vertical-align: middle;
+  color: #fff;
+  background-color: #038cff;
+  font-size: 20px;
+  -webkit-transition: all 0.35s ease;
+  -o-transition: all 0.35s ease;
+  transition: all 0.35s ease;
+  position: absolute;
+  left: 12px;
+  top: 11px;
+}
+.faqtab__link__text {
+  display: inline-block;
+  vertical-align: middle;
+  color: #949494;
+  -webkit-transition: all 0.35s ease;
+  -o-transition: all 0.35s ease;
+  transition: all 0.35s ease;
+}
+.faqtab__link__text i {
+  font-size: 24px;
+  display: inline-block;
+  vertical-align: middle;
+}
+.faqtab__li a:hover .faqtab__link__text,
+.faqtab__li.active .faqtab__link__text {
+  color: #000;
+}
+.faqtab__li.active .faqtab__link__text {
+  font-family: 'latobold', sans-serif;
+}
+.faqtab__li a:hover {
+  padding-left: 12px;
+  padding-right: 12px;
+}
+.faqtab__li a:hover .faqtab__link__icon {
+  left: 10px;
+}
+.bg-orange {
+    background-color: #FFA200;
+}
+.bg-indigo {
+    background-color: #4F128E;
+}
+.bg-green {
+    background-color: #03AF65;
+}
+.bg-red {
+    background-color: #FF1212;
+}
+.bg-blue {
+    background-color: #0079D5;
+}
+.bg-pink {
+    background-color: #B400A0;
+}
+.bg-orange-light {
+    background-color: #FA8100;
+}
+.bg-green-light {
+    background-color: #00BF93;
+}
+
+.faqaccordion__content {
+  display: none;
+}
+.faqaccordion__header {
+  cursor: pointer;
+  border: 0;
+  padding: 14px 0;
+  background: white;
+  border-bottom: 1px solid rgba(151, 151, 151, 0.24);
+  position: relative;
+}
+.page-content .faqaccordion__title {
+  margin-bottom: 0;
+  padding-right: 30px;
+  font-family: 'latoregular', sans-serif;
+  font-size: 16px;
+  font-weight: normal;
+}
+.faqaccordion__header > i {
+  position: absolute;
+  top: 12px;
+  font-size: 20px;
+  right: 0;
+  color: #ff0653;
+}
+.active-collapse.faqaccordion__header {
+  color: #ff0653;
+}
+.faqaccordion__content {
+  padding-top: 20px;
+  color: #777777;
+}
+@media all and (max-width: 991px) {
+  .faqtab__link__text {
+    padding-left: 40px;
+    display: block;
+    line-height: 1.2;
+  }
+  .faqtab__li a {
+    padding: 12px 5px;
+  }
+  .faqtab__li a:hover {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+  .faqtab__link__icon {
+    left: 6px;
+    top: 6px;
+  }
+  .faqtab__col1 {
+    flex: 4;
+  }
+  .faqtab__col2 {
+    flex: 8;
+    margin-left: 15px;
+  }
+  .faqtab__content {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+  .faqtab__li + .faqtab__li {
+    margin-top: 15px;
+  }
+}
+@media all and (min-width: 768px) {
+  .faqtab__ul.owl-carousel {
+    display: block;
+  }
+}
+@media all and (max-width: 767px) {
+  .faqtab__row {
+    display: block;
+  }
+  .faqtab__col1 {
+    flex: 12;
+    margin-bottom: 20px;
+  }
+  .faqtab__col2 {
+    flex: 12;
+    margin-left: 0;
+  }
+  .faqtab__row {
+    display: block;
+  }
+  .faqtab__li + .faqtab__li {
+     margin-top: 0; 
+  }
+  .faqtab__li {
+    min-width: 217px;
+    display: inline-block;
+    vertical-align: top;
   }
 }
